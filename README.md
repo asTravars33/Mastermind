@@ -16,4 +16,4 @@ Two-Player Mode: Try to guess a computer-generated sequence faster than your opp
   
 AI Mode: Watch the computer try to guess a computer-generated sequence.   
   
-Demonstration: 
+Demonstration: https://youtu.be/YpFtohhmzjw

@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Mastermind"
+        android:textColor="@color/black"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:textSize="30sp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/help_button"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.3"
+        app:layout_constraintHeight_percent="0.06"
+        android:background="#41547d"
+        android:text="Show Rules"
+        android:textColor="@color/white"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title" />
+    <TextView
+        android:id="@+id/instructions"
+        android:elevation="5dp"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textColor="@color/black"
+        android:text="RULES\n\nThe computer picks a sequence of four colors. The objective is to guess (within 8 tries) the exact sequence of colors.\n\nFor each color in your guess that is the correct color and correct position, the computer displays a black circle. \n\nFor each color in your guess that is the correct color but not the correct position, the computer displays a white circle. \n\nGAMEPLAY\n\nIndividual Mode: Try to guess a computer-generated sequence. \n\nTwo-Player Mode: Try to guess a computer-generated sequence faster than your
+opponent. Your opponent's progress will be displayed on the right as you play. \n\nAI Mode: Watch the computer try to guess a computer-generated sequence. \n\nGood luck and have fun!"
+        android:background="@color/help"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:padding="10dp"
+        app:layout_constraintTop_toBottomOf="@id/help_button"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <LinearLayout
+        android:id="@+id/buttons"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/help_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:weightSum="1"
+        android:orientation="vertical">
+        <ImageButton
+            android:id="@+id/individual"
+            android:src="@drawable/image1"
+            android:onClick="playIndividual"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="20dp"
+            android:layout_height="0dp"
+            android:layout_weight="0.33" />
+        <ImageButton
+            android:id="@+id/two_player"
+            android:src="@drawable/image4"
+            android:onClick="playTwoPlayer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="20dp"
+            android:layout_weight="0.33" />
+        <ImageButton
+            android:id="@+id/ai"
+            android:src="@drawable/image3"
+            android:onClick="playAI"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="0.33" />
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

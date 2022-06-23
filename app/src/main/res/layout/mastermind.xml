@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <view
+        android:id="@+id/game_view"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_height="0dp"
+        class="com.wangjessica.jwlab11b.MastermindView"
+        app:layout_constraintHorizontal_bias="0.7"
+        app:layout_constraintHeight_percent="0.8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/title"
+        app:layout_constraintBottom_toTopOf="@id/choices" />
+    <LinearLayout
+        android:id="@+id/choices"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        app:layout_constraintHeight_percent="0.15"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/game_view"
+        android:weightSum="1"
+        android:orientation="horizontal">
+        <ImageView
+            android:id="@+id/blue"
+            android:tag="blue"
+            android:src="@drawable/blue"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.16" />
+        <ImageView
+            android:id="@+id/green"
+            android:tag="green"
+            android:src="@drawable/green"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.16" />
+        <ImageView
+            android:id="@+id/orange"
+            android:tag="orange"
+            android:src="@drawable/orange"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.16" />
+        <ImageView
+            android:id="@+id/purple"
+            android:tag="purple"
+            android:src="@drawable/purple"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.16" />
+        <ImageView
+            android:id="@+id/red"
+            android:tag="red"
+            android:src="@drawable/red"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.16" />
+        <ImageView
+            android:id="@+id/yellow"
+            android:tag="yellow"
+            android:src="@drawable/yellow"
+            android:layout_height="match_parent"
+            android:layout_width="0dp"
+            android:layout_weight="0.16" />
+    </LinearLayout>
+    <TextView
+        android:id="@+id/game_over_msg"
+        android:visibility="gone"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.6"
+        android:text="Out of moves!"
+        android:background="@color/help"
+        android:elevation="5dp"
+        android:textSize="25sp"
+        android:layout_height="wrap_content"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent" />
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/restart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:text="Restart"
+        android:elevation="6dp"
+        app:layout_constraintLeft_toLeftOf="@id/game_over_msg"
+        app:layout_constraintRight_toRightOf="@id/game_over_msg"
+        app:layout_constraintTop_toBottomOf="@id/game_over_msg" />
+</androidx.constraintlayout.widget.ConstraintLayout>
